@@ -4,7 +4,7 @@
 # machine and combined with the account and region to form the repository name for ECR.
 
 prog=$0
-default_image="python:3.10-slim-bullseye"
+default_image="python:3.6-buster"
 
 function usage {
     echo "Usage: $1 [--base <base-image>] <image>"
@@ -47,7 +47,7 @@ fi
 
 # Get the region defined in the current configuration (default to us-west-2 if none defined)
 region=$(aws configure get region)
-region=${region:-us-west-2}
+region=${region:-ap-southeast-2}
 echo "Region ${region}"
 
 
